@@ -1,0 +1,120 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  font-family: sans-serif;
+}
+
+.status {
+  margin: 8px 0 16px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Board + captured panel side by side (desktop) */
+.game {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  /* background-color: black; */
+}
+
+.board {
+  width: min(90vw, 80vh, 800px);
+  touch-action: none; /* stops the page scrolling while dragging a piece on touch screens */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6)
+}
+
+.captured-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.captured-title {
+  margin-bottom: 6px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.captured-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 40px;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.reset-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: black;
+  background-color: red;
+  color: black;
+}
+
+.status,
+.captured-panel {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  padding: 10px 16px;
+}
+
+.status {
+  margin: 8px 0 16px;
+}
+
+/* Phones and small tablets: stack everything vertically */
+@media (max-width: 700px) {
+  .app {
+    padding: 8px;
+  }
+
+  .status {
+    font-size: 1.2rem;
+    margin: 4px 0 10px;
+  }
+
+  .game {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .board {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .captured-panel {
+    flex-direction: row;
+    width: 100%;
+    max-width: 560px;
+    gap: 16px;
+  }
+
+  .captured-row {
+    flex: 1;
+  }
+
+  .captured-pieces {
+    min-height: 30px;
+    font-size: 24px;
+  }
+
+  .reset-btn {
+    width: 100%;
+    max-width: 560px;
+    padding: 14px;
+  }
+}
